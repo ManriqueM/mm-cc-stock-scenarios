@@ -1,7 +1,7 @@
 # Roadmap
 
 - [x] **Phase 0 — Project scaffold**: Streamlit app skeleton (`app.py`), `requirements.txt`, multi-page structure, confirm app runs locally
-- [ ] **Phase 1 — Data layer**: `yfinance` wrapper for fetching/validating historical price data for S&P 500/NYSE tickers, cached with `st.cache_data`
+- [x] **Phase 1 — Data layer**: `yfinance` wrapper for fetching/validating historical price data for S&P 500/NYSE tickers, cached with `st.cache_data`
 - [ ] **Phase 2 — Portfolio builder**: UI for entering tickers + weights (manual or CSV upload), weight validation, portfolio summary view
 - [ ] **Phase 3 — Historical metrics**: compute & display returns, volatility, Sharpe ratio, max drawdown, correlation matrix
 - [ ] **Phase 4 — Monte Carlo projections**: forward-looking simulation engine + percentile-band chart of projected portfolio value
