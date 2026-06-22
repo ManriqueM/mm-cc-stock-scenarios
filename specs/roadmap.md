@@ -9,4 +9,4 @@
 - [x] **Phase 6 — Drawdown stress tests**: apply historical crash scenarios (2008, 2020, dot-com) to the current portfolio, show impact
 - [x] **Phase 7 — Rebalancing rules**: simulate periodic rebalancing vs. buy-and-hold, compare risk/return impact
 - [x] **Phase 8 — Assumptions & limitations**: dedicated, always-visible disclosure of data limitations, simulation assumptions, and "not financial advice" framing throughout the app
-- [ ] **Phase 9 — Deploy**: deploy to Streamlit Community Cloud, smoke-test the public URL
+- [x] **Phase 9 — Deploy**: deploy to Streamlit Community Cloud, smoke-test the public URL
