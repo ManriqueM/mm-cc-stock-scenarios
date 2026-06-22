@@ -1,5 +1,7 @@
 import streamlit as st
 
+import disclosures
+
 st.set_page_config(
     page_title="Stock Scenarios",
     page_icon="📈",
@@ -27,14 +29,9 @@ st.markdown(
 - **Stress-test drawdowns** — see how your portfolio would have fared in past crashes (2008, 2020, dot-com).
 - **Test rebalancing rules** — periodic rebalancing vs. buy-and-hold.
 
-Use the sidebar to navigate between sections.
+Use the sidebar to navigate between sections. See the **Assumptions & Limitations**
+page for the data limitations and simulation assumptions behind every result here.
 """
 )
 
-st.warning(
-    "**Not financial advice.** All figures are derived from historical data "
-    "and simplifying assumptions — they describe what *could have* happened, "
-    "not what *will* happen. See each page for its specific assumptions and "
-    "limitations before making any investment decision.",
-    icon="⚠️",
-)
+disclosures.render_footer()

@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+import disclosures
 from data import fetch_price_history
 from entry_timing import (
     HORIZONS_YEARS,
@@ -26,6 +27,7 @@ st.markdown(
 
 if "portfolio" not in st.session_state:
     st.info("Build a portfolio first on the **Portfolio Builder** page.", icon="🧮")
+    disclosures.render_footer()
     st.stop()
 
 portfolio = st.session_state["portfolio"]
@@ -86,3 +88,5 @@ with st.expander("Assumptions"):
         "back to that horizon's start date.\n"
         "- No fees, taxes, or slippage are modeled — this is a pure price-return comparison."
     )
+
+disclosures.render_footer()

@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+import disclosures
 from data import fetch_price_history
 from entry_timing import lump_sum_value_series
 from metrics import annualized_return, annualized_volatility, max_drawdown, sharpe_ratio
@@ -23,6 +24,7 @@ st.markdown(
 
 if "portfolio" not in st.session_state:
     st.info("Build a portfolio first on the **Portfolio Builder** page.", icon="🧮")
+    disclosures.render_footer()
     st.stop()
 
 portfolio = st.session_state["portfolio"]
@@ -82,3 +84,5 @@ with st.expander("Assumptions"):
         "- For a **single-ticker portfolio**, rebalancing is a no-op — all three strategies "
         "will show identical results."
     )
+
+disclosures.render_footer()

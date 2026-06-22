@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import plotly.express as px
 import streamlit as st
 
+import disclosures
 from data import fetch_price_history
 from metrics import compute_metrics_table, compute_portfolio_metrics, correlation_matrix, daily_returns
 
@@ -19,6 +20,7 @@ st.markdown(
 
 if "portfolio" not in st.session_state:
     st.info("Build a portfolio first on the **Portfolio Builder** page.", icon="🧮")
+    disclosures.render_footer()
     st.stop()
 
 portfolio = st.session_state["portfolio"]
@@ -83,3 +85,5 @@ with st.expander("Assumptions"):
         "- Portfolio-level metrics are computed from the **weighted daily return series** "
         "(not a weighted average of per-asset metrics), so they account for diversification."
     )
+
+disclosures.render_footer()

@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import plotly.graph_objects as go
 import streamlit as st
 
+import disclosures
 from data import fetch_price_history
 from metrics import daily_returns, weighted_portfolio_returns
 from simulation import compute_percentile_bands, simulate_portfolio_paths
@@ -25,6 +26,7 @@ st.markdown(
 
 if "portfolio" not in st.session_state:
     st.info("Build a portfolio first on the **Portfolio Builder** page.", icon="🧮")
+    disclosures.render_footer()
     st.stop()
 
 portfolio = st.session_state["portfolio"]
@@ -94,3 +96,5 @@ with st.expander("Assumptions"):
         "during the horizon.\n"
         "- Past performance does not guarantee future results."
     )
+
+disclosures.render_footer()

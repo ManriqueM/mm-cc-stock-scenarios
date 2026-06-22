@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+import disclosures
 from data import fetch_price_history
 from entry_timing import horizon_has_sufficient_history
 from metrics import max_drawdown
@@ -22,6 +23,7 @@ st.markdown(
 
 if "portfolio" not in st.session_state:
     st.info("Build a portfolio first on the **Portfolio Builder** page.", icon="🧮")
+    disclosures.render_footer()
     st.stop()
 
 portfolio = st.session_state["portfolio"]
@@ -74,3 +76,5 @@ with st.expander("Assumptions"):
         "- A scenario is **skipped** if any portfolio ticker lacks price history reaching "
         "back to that scenario's peak date."
     )
+
+disclosures.render_footer()

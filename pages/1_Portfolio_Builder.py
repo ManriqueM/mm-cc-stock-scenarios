@@ -2,6 +2,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+import disclosures
 from portfolio import build_portfolio, parse_portfolio_csv
 
 st.set_page_config(page_title="Portfolio Builder", page_icon="🧮")
@@ -78,3 +79,5 @@ with upload_tab:
                     st.session_state["portfolio"] = portfolio
                     st.success("Portfolio built successfully.")
                     st.rerun()
+
+disclosures.render_footer()
